@@ -1,0 +1,43 @@
+body {
+    background: url("../img/whitey.png") repeat;
+}
+
+#container {
+    width: 474px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, p, form {
+    text-align: center;
+}
+
+.block {
+    background: #eeeee8;
+    width: 150px;
+    height: 170px;
+    margin: 3px;
+    float: left;
+    border: 1px solid #383838;
+
+
+}
+
+.inner {
+    width: 150px;
+    height: 150px;
+    line-height: 146px;
+    text-align: center;
+
+}
+.title {
+    width: 100%;
+    height: 19px;
+    border-top: 1px solid #383838;
+    text-align: center;
+}
+.block img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
