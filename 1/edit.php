@@ -3,9 +3,10 @@
 
 require __DIR__ . './models/news.php';
 
-$news_id = $_GET['news_id'];
+if (empty($_GET['news_id'])) {
+    header("Location: ./");
+}
 
-$data = array_pop(News_getById($news_id));
-
+$data = News_getById($_GET['news_id']);
 
 include __DIR__ . './views/edit.php';

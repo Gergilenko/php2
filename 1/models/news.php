@@ -5,14 +5,14 @@ require_once __DIR__ . './../functions/sql.php';
 
 function News_getAll() {
 
-    $sql = "SELECT news_id, title, text, add_date FROM news ORDER BY news_id DESC";
+    $sql = "SELECT title, text, add_date FROM news ORDER BY add_date DESC";
     return sqlQuery($sql);
 }
 
 function News_getById($news_id) {
 
     $sql = "SELECT news_id, title, text, add_date FROM news WHERE news_id='" .$news_id. "'";
-    return sqlQuery($sql);
+    return array_pop(sqlQuery($sql));
 }
 
 function News_add($data) {
