@@ -2,21 +2,22 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Gallery</title>
+    <title>NEWS</title>
     <link type="text/css" rel="stylesheet" href="./views/css/style.css">
 </head>
 <body>
     <div id="container">
-        <h1>GALLERY</h1>
-        <p> <?php include __DIR__ . './form.html'; ?> </p>
-        <p>
-        <?php foreach ($images as $image):
+        <h1>NEWS</h1>
+         <?php include __DIR__ . './form.html'; ?>
+
+        <?php foreach ($news as $data):
             echo "<div class='block'>";
-            echo "<div class='inner'><img src='".$image['url']."'></div>";
-            echo "<div class='title'>". $image['title']."</div>";
+            echo "<div class='mhead'>". $data['title']."</div>";
+            echo "<p>".$data['text']."</p>";
+            echo "<div class='mfoot'>".$data['add_date']." <a href='./del.php?news_id=" .$data['news_id']. "'>Удалить</a> <a href='./edit.php?news_id=" .$data['news_id']. "'>Править</a></div>";
             echo "</div>";
           endforeach; ?>
-        </p>
+
 
     </div>
 </body>

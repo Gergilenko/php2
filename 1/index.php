@@ -1,8 +1,9 @@
 <?php
 //Controller
 
-require __DIR__ . './models/photo.php';
+require __DIR__ . './models/news.php';
 
-$images = Photo_getAll();
+$news = News_getAll();
+
 
 include __DIR__ . './views/index.php';
