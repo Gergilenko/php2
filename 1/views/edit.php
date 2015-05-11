@@ -8,17 +8,13 @@
 <body>
     <div id="container">
         <h1>NEWS</h1>
-
         <form action="./save.php" method="post">
-            <table>
-                <tr><td><input type="text" name="title" value="<?php echo $data['title']; ?>" required>
-                <tr><td><input type="date" name="add_date" value="<?php echo $data['add_date']; ?>">
-                <tr><td><textarea name="text" required> <?php echo $data['text']; ?> </textarea>
-                        <input type="hidden" name="news_id" value="<?php echo $data['news_id']; ?>">
-                <tr><td><input type="submit" value="Сохранить">
-            </table>
+            <p><input type="text" name="title" value="<?php echo $data['title']; ?>" required></p>
+            <p><textarea name="text" rows="10" wrap="soft" required> <?php echo $data['text']; ?> </textarea></p>
+            <input type="hidden" name="news_id" value="<?php echo $data['news_id']; ?>">
+            <p><input type="date" name="add_date" value="<?php echo $data['add_date']; ?>"></p>
+            <p><input type="submit" value="Сохранить"></p>
         </form>
-
     </div>
 </body>
 </html>

@@ -9,6 +9,7 @@ if (!empty($_POST['title']) && !empty($_POST['text'])) {
 
     News_add($data);
 
+    header('Location: ./');
 }
+include __DIR__ . './views/add.php';
 
-header('Location: ./');

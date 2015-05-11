@@ -5,7 +5,7 @@ require_once __DIR__ . './../functions/sql.php';
 
 function News_getAll() {
 
-    $sql = "SELECT title, text, add_date FROM news ORDER BY add_date DESC";
+    $sql = "SELECT news_id, title, text, add_date FROM news ORDER BY add_date DESC";
     return sqlQuery($sql);
 }
 

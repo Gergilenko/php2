@@ -51,3 +51,6 @@ table {
     float: right;
     margin: 0 10px;
 }
+textarea, input[type="text"] {
+    width: 100%;
+}

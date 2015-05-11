@@ -8,7 +8,9 @@
 <body>
     <div id="container">
         <h1>NEWS</h1>
-         <?php include __DIR__ . './form.html'; ?>
+         <form action="./add.php" method="post">
+             <input type="submit" value="Добавить новость">
+         </form>
 
         <?php foreach ($news as $data):
             echo "<div class='block'>";
@@ -17,7 +19,6 @@
             echo "<div class='mfoot'>".$data['add_date']." <a href='./del.php?news_id=" .$data['news_id']. "'>Удалить</a> <a href='./edit.php?news_id=" .$data['news_id']. "'>Править</a></div>";
             echo "</div>";
           endforeach; ?>
-
 
     </div>
 </body>
