@@ -7,5 +7,27 @@
  */
 
 class Db {
+    private $link;
 
+    public function __construct() {
+        $this->link =  new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_BASE);
+    }
+    //method for SELECT queries
+    public function sqlQuery($sql) {
+
+        $result_set = $this->link->query($sql);
+
+        $data = [];
+        while($row = $result_set->fetch_assoc()) {
+            $data[] = $row;
+        }
+        $result_set->close();
+
+        return $data;
+    }
+    //method for INSERT, UPDATE, DELETE queries
+    public function sqlExec($sql) {
+
+        return $this->link->query($sql);
+    }
 }
