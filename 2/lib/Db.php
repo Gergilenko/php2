@@ -13,6 +13,7 @@ class Db {
 
     public function __construct() {
         $this->link =  new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_BASE);
+        $this->link->query("SET NAMES 'utf8'");
     }
     //method for SELECT queries
     public function sqlQuery($sql) {
