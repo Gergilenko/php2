@@ -6,10 +6,18 @@
  * Time: 15:33
  */
 
+require_once __DIR__ . './../lib/Db.php';
+
 abstract class Article {
+
+    protected $db;
     public $title;
     public $text;
     public $add_date;
+
+    public function __construct() {
+        $this->db = new Db();
+    }
 
     abstract public function viewAll();
 

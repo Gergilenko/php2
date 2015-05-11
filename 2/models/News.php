@@ -6,18 +6,11 @@
  * Time: 15:33
  */
 
-require_once __DIR__ . './../lib/Db.php';
 require_once __DIR__ . './../lib/Article.php';
 
 class News extends Article {
 
-    private $db;
     public $news_id;
-
-
-    public function __construct() {
-        $this->db = new Db();
-    }
 
     public function viewAll() {
 
