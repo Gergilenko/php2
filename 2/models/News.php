@@ -6,7 +6,7 @@
  * Time: 15:33
  */
 
-require_once __DIR__ . './../lib/Article.php';
+require_once __DIR__ . './../classes/Article.php';
 
 class News extends Article {
 

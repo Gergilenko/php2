@@ -6,7 +6,7 @@
  * Time: 15:33
  */
 
-require_once __DIR__ . './../lib/Db.php';
+require_once __DIR__ . './../classes/Db.php';
 
 abstract class Article {
 

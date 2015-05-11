@@ -12,13 +12,13 @@
              <input type="submit" value="Добавить новость">
          </form>
 
-        <?php foreach ($data as $value):
-            echo "<div class='block'>";
-            echo "<div class='mhead'>". $value['title']."</div>";
-            echo "<p>".$value['text']."</p>";
-            echo "<div class='mfoot'>".$value['add_date']." <a href='./del.php?news_id=" .$value['news_id']. "'>Удалить</a> <a href='./edit.php?news_id=" .$value['news_id']. "'>Править</a></div>";
-            echo "</div>";
-          endforeach; ?>
+        <?php foreach ($data as $value): ?>
+            <div class='block'>
+                <div class='mhead'> <?php echo $value['title']; ?> </div>
+                <p> <?php echo $value['text']; ?> </p>
+                <div class='mfoot'> <?php echo $value['add_date']; ?> <a href='./del.php?news_id=<?php echo $value['news_id']; ?>'>Удалить</a> <a href='./edit.php?news_id=<?php echo $value['news_id']; ?>'>Править</a></div>
+            </div>
+        <?php endforeach; ?>
 
     </div>
 </body>
