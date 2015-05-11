@@ -30,4 +30,8 @@ class Db {
 
         return $this->link->query($sql);
     }
+
+    public function __destruct() {
+        $this->link->close();
+    }
 }
