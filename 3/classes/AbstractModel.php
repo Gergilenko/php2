@@ -10,22 +10,21 @@ abstract class AbstractModel {
 
     protected $db;
     protected static $table;
-    protected static $class;
     public $add_date;
 
     public function __construct() {
         $this->db = new Db();
     }
-
+    //will be static method later...
     public function viewAll() {
         $sql = "SELECT * FROM " . static::$table . " ORDER BY add_date DESC";
-        return $this->db->queryAll($sql, static::$class);
+        return $this->db->queryAll($sql, get_called_class());
     }
 
     public function viewOne($id) {
 
         $sql = "SELECT * FROM " . static::$table . " WHERE " . static::$table . "_id='" . $id . "'";
-        return $this->db->queryOne($sql, static::$class);
+        return $this->db->queryOne($sql, get_called_class());
     }
 
     abstract public function add();
