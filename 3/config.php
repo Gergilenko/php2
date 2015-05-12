@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Yuriy
- * Date: 11.05.2015
- * Time: 22:46
- */
+// Set MySQL connection parameters here
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
