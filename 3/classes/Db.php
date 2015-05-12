@@ -8,7 +8,7 @@
 
 require_once __DIR__ . './../config.php';
 
-class Db {
+final class Db {
 
     private $link;
 
@@ -45,7 +45,6 @@ class Db {
 
         return $this->link->query($sql);
     }
-
 
     public function __destruct() {
         $this->link->close();
