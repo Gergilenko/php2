@@ -22,9 +22,9 @@ abstract class AbstractModel {
         return $this->db->queryAll($sql, static::$class);
     }
 
-    public function viewOne() {
+    public function viewOne($id) {
 
-        $sql = "SELECT * FROM " . static::$table . " WHERE news_id='" . $this->news_id . "'";
+        $sql = "SELECT * FROM " . static::$table . " WHERE " . static::$table . "_id='" . $id . "'";
         return $this->db->queryOne($sql, static::$class);
     }
 

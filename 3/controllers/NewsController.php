@@ -19,8 +19,7 @@ class NewsController {
             header("Location: ./");
         }
         $news = new News();
-        $news->news_id = $_GET['news_id'];
-        $data = $news->viewOne();
+        $data = $news->viewOne($_GET['news_id']);
 
         include __DIR__ . './../views/news/one.php';
     }
@@ -66,8 +65,7 @@ class NewsController {
             header("Location: ./");
         }
         $news = new News();
-        $news->news_id = $_GET['news_id'];
-        $data = $news->viewOne();
+        $data = $news->viewOne($_GET['news_id']);
 
         include __DIR__ . './../views/news/edit.php';
     }
