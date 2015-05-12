@@ -11,7 +11,8 @@ class NewsController {
     public function actionAll() {
         $data = News::viewAll();
         $view = new View();
-        $view->assign('items', $data);
+        $view->items = $data;
+        //$view->assign('items', $data);
         $view->display('news/all.php');
     }
 
@@ -21,7 +22,7 @@ class NewsController {
         }
         $data = News::viewOne($_GET['news_id']);
         $view = new View();
-        $view->assign('item', $data);
+        $view->item = $data;
         $view->display('news/one.php');
     }
 
@@ -68,7 +69,7 @@ class NewsController {
         }
         $data = News::viewOne($_GET['news_id']);
         $view = new View();
-        $view->assign('item', $data);
+        $view->item = $data;
         $view->display('news/edit.php');
     }
 
