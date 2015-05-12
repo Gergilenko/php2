@@ -15,16 +15,17 @@ abstract class AbstractModel {
     public function __construct() {
         $this->db = new Db();
     }
-    //will be static method later...
-    public function viewAll() {
+
+    public static function viewAll() {
+        $db = new Db;
         $sql = "SELECT * FROM " . static::$table . " ORDER BY add_date DESC";
-        return $this->db->queryAll($sql, get_called_class());
+        return $db->queryAll($sql, get_called_class());
     }
 
-    public function viewOne($id) {
-
+    public static function viewOne($id) {
+        $db = new Db;
         $sql = "SELECT * FROM " . static::$table . " WHERE " . static::$table . "_id='" . $id . "'";
-        return $this->db->queryOne($sql, get_called_class());
+        return $db->queryOne($sql, get_called_class());
     }
 
     abstract public function add();

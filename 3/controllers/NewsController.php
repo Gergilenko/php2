@@ -9,8 +9,7 @@
 class NewsController {
 
     public function actionAll() {
-        $news = new News();
-        $data = $news->viewAll();
+        $data = News::viewAll();
         include __DIR__ . './../views/news/all.php';
     }
 
@@ -18,8 +17,7 @@ class NewsController {
         if (empty($_GET['news_id'])) {
             header("Location: ./");
         }
-        $news = new News();
-        $data = $news->viewOne($_GET['news_id']);
+        $data = News::viewOne($_GET['news_id']);
 
         include __DIR__ . './../views/news/one.php';
     }
@@ -64,8 +62,7 @@ class NewsController {
         if (empty($_GET['news_id'])) {
             header("Location: ./");
         }
-        $news = new News();
-        $data = $news->viewOne($_GET['news_id']);
+        $data = News::viewOne($_GET['news_id']);
 
         include __DIR__ . './../views/news/edit.php';
     }
