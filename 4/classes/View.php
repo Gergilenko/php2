@@ -6,10 +6,12 @@
  * Time: 16:07
  */
 
-class View {
+class View
+    implements Iterator {
 
+    private $position = 0;
 
-    protected $data =[];
+    public $data =[];
 
     public function __set($key, $value) {
         $this->data[$key] = $value;
@@ -26,5 +28,28 @@ class View {
         }
         include __DIR__ . './../views/' . $template;
     }
+
+    //Iterator realisation
+    function rewind() {
+        reset($this->data);
+    }
+
+    function valid() {
+        return isset($this->data[key($this->data)]);
+    }
+
+    function current() {
+        return current($this->data);
+    }
+
+    function key() {
+        return key($this->data);
+    }
+
+    function next() {
+        next($this->data);
+    }
+
+
 
 }
