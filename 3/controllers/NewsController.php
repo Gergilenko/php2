@@ -10,7 +10,9 @@ class NewsController {
 
     public function actionAll() {
         $data = News::viewAll();
-        include __DIR__ . './../views/news/all.php';
+        $view = new View();
+        $view->assign('items', $data);
+        $view->display('news/all.php');
     }
 
     public function actionOne() {
@@ -18,8 +20,9 @@ class NewsController {
             header("Location: ./");
         }
         $data = News::viewOne($_GET['news_id']);
-
-        include __DIR__ . './../views/news/one.php';
+        $view = new View();
+        $view->assign('item', $data);
+        $view->display('news/one.php');
     }
 
     public function actionAdd() {
@@ -31,7 +34,8 @@ class NewsController {
             $news->add();
             header('Location: ./');
         }
-        include __DIR__ . './../views/news/add.php';
+        $view = new View();
+        $view->display('news/add.php');
     }
 
     public function actionDel() {
@@ -63,8 +67,9 @@ class NewsController {
             header("Location: ./");
         }
         $data = News::viewOne($_GET['news_id']);
-
-        include __DIR__ . './../views/news/edit.php';
+        $view = new View();
+        $view->assign('item', $data);
+        $view->display('news/edit.php');
     }
 
 }

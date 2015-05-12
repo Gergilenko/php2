@@ -12,7 +12,7 @@
         <input type="submit" value="Добавить новость">
     </form>
 
-    <?php foreach ($data as $obj): ?>
+    <?php foreach ($items as $obj): ?>
         <div class='block'>
             <div class='mhead'> <?php echo $obj->title; ?> </div>
             <p> <?php echo $obj->text; ?> </p>
