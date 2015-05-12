@@ -1,0 +1,56 @@
+body {
+    background: url("../img/whitey.png") repeat;
+}
+
+#container {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, p, form {
+    text-align: center;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px;
+}
+
+.block {
+    background-color: white;
+    box-shadow: 4px 5px 6px grey;
+    margin-top: 20px;
+    max-width: 640px;
+    border: 1px solid grey;
+    border-radius: 6px 6px 0 0;
+}
+
+.block p {
+    text-align: left;
+    padding: 0 15px;
+}
+
+.mhead {
+    border-bottom: 1px solid grey;
+    border-radius: 6px 6px 0 0;
+    padding: 5px 10px;
+    background: #f2f2f2;
+}
+
+.mfoot {
+    border-top: 1px solid grey;
+    background-color: #f2f2f2;
+    padding: 4px 10px;
+    font-style: italic;
+
+}
+.mfoot a {
+    color: grey;
+    text-decoration: none;
+    float: right;
+    margin: 0 10px;
+}
+textarea, input[type="text"] {
+    width: 100%;
+}
