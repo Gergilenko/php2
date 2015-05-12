@@ -10,20 +10,11 @@
 
 class News extends AbstractModel {
 
+    protected static $class = 'News';
+    protected static $table = 'news';
     public $news_id;
     public $title;
     public $text;
-
-    public function viewAll() {
-        $sql = "SELECT * FROM news ORDER BY add_date DESC";
-        return $this->db->queryAll($sql, 'News');
-    }
-
-    public function viewOne() {
-
-        $sql = "SELECT * FROM news WHERE news_id='" . $this->news_id . "'";
-        return $this->db->queryOne($sql, 'News');
-    }
 
     public function add() {
 

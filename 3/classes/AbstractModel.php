@@ -9,15 +9,24 @@
 abstract class AbstractModel {
 
     protected $db;
+    protected static $table;
+    protected static $class;
     public $add_date;
 
     public function __construct() {
         $this->db = new Db();
     }
 
-    abstract public function viewAll();
+    public function viewAll() {
+        $sql = "SELECT * FROM " . static::$table . " ORDER BY add_date DESC";
+        return $this->db->queryAll($sql, static::$class);
+    }
 
-    abstract public function viewOne();
+    public function viewOne() {
+
+        $sql = "SELECT * FROM " . static::$table . " WHERE news_id='" . $this->news_id . "'";
+        return $this->db->queryOne($sql, static::$class);
+    }
 
     abstract public function add();
 
