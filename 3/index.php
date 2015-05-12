@@ -5,6 +5,7 @@
  * Date: 11.05.2015
  * Time: 22:46
  */
+
 //Front Controller
 
 require_once __DIR__ . './autoload.php';
@@ -16,4 +17,5 @@ $act = isset($_GET['act']) ? $_GET['act'] : 'All';
 $ctrlClassName = $ctrl . 'Controller';
 $controller = new $ctrlClassName;
 $method = 'action' . $act;
+
 $controller->$method();
