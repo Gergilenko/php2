@@ -25,17 +25,22 @@ class NewsController {
         $view->display('news/one.php');
     }
 
-    public function actionAdd() {
+    public function actionSave() {
         if (!empty($_POST['title']) && !empty($_POST['text'])) {
 
             $news = new News();
             $news->title = substr($_POST['title'], 0, 100);
             $news->text = $_POST['text'];
-            $news->add();
-            header('Location: ./');
+            $news->news_id = isset($_POST['news_id']) ? $_POST['news_id'] : null;
+            $news->add_date = isset($_POST['add_date']) ? $_POST['add_date'] : null;
+            $news->save();
         }
+        header('Location: ./');
+    }
+
+    public function actionNew() {
         $view = new View();
-        $view->display('news/add.php');
+        $view->display('news/new.php');
     }
 
     public function actionDel() {
@@ -48,18 +53,7 @@ class NewsController {
         header('Location: ./');
     }
 
-    public function actionSave() {
-        if (!empty($_POST)) {
 
-            $news = new News();
-            $news->title = substr($_POST['title'], 0, 100);
-            $news->text = $_POST['text'];
-            $news->news_id = $_POST['news_id'];
-            $news->add_date = $_POST['add_date'];
-            $news->save();
-        }
-        header('Location: ./');
-    }
 
     public function actionEdit() {
 

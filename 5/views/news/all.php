@@ -8,7 +8,7 @@
 <body>
 <div id="container">
     <h1>NEWS</h1>
-    <form action="./index.php?ctrl=News&act=Add" method="post">
+    <form action="./index.php?ctrl=News&act=New" method="post">
         <input type="submit" value="Добавить новость">
     </form>
 

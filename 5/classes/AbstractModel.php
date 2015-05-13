@@ -28,8 +28,6 @@ abstract class AbstractModel {
         return $db->queryOne($sql, get_called_class());
     }
 
-    abstract public function add();
-
     abstract public function save();
 
     abstract public function del();
