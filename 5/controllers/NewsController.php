@@ -9,9 +9,9 @@
 class NewsController {
 
     public function actionAll() {
-        $data = News::viewAll();
-        $view = new View();
-        $view->items = $data;
+
+        $view = new View;
+        $view->items = NewsModel::findAll();
         $view->display('news/all.php');
     }
 
@@ -19,51 +19,63 @@ class NewsController {
         if (empty($_GET['news_id'])) {
             header("Location: ./");
         }
-        $data = News::viewOne($_GET['news_id']);
-        $view = new View();
-        $view->item = $data;
+        $view = new View;
+        $view->item = NewsModel::findOneByPk($_GET['news_id']);
         $view->display('news/one.php');
     }
 
-    public function actionSave() {
-        if (!empty($_POST['title']) && !empty($_POST['text'])) {
-
-            $news = new News();
-            $news->title = substr($_POST['title'], 0, 100);
-            $news->text = $_POST['text'];
-            $news->news_id = isset($_POST['news_id']) ? $_POST['news_id'] : null;
-            $news->add_date = isset($_POST['add_date']) ? $_POST['add_date'] : null;
-            $news->save();
-        }
-        header('Location: ./');
-    }
-
     public function actionNew() {
-        $view = new View();
+        $view = new View;
         $view->display('news/new.php');
     }
 
-    public function actionDel() {
-        if (!empty($_GET['news_id'])) {
-
-            $news = new News();
-            $news->news_id = $_GET['news_id'];
-            $news->del();
+    public function actionAdd() {
+        if (!empty($_POST['title']) && !empty($_POST['text'])) {
+            $news = new NewsModel;
+            $news->title = substr($_POST['title'], 0, 100);
+            $news->text = $_POST['text'];
+            $news->add_date = date('Y-m-d');
+            $news->insert();
         }
         header('Location: ./');
     }
-
-
 
     public function actionEdit() {
 
         if (empty($_GET['news_id'])) {
             header("Location: ./");
         }
-        $data = News::viewOne($_GET['news_id']);
-        $view = new View();
-        $view->item = $data;
+        $view = new View;
+        $view->item = NewsModel::findOneByPk($_GET['news_id']);
         $view->display('news/edit.php');
     }
+
+    public function actionSave() {
+
+        if (!empty($_POST['news_id']) && isset($_POST['add_date'])) {
+            if (isset($_POST['title']) && isset($_POST['text'])) {
+                $news = new NewsModel;
+                $news->add_date = $_POST['add_date'];
+                $news->title = substr($_POST['title'], 0, 100);
+                $news->text = $_POST['text'];
+                $news->news_id = $_POST['news_id'];
+                $news->update();
+            }
+        }
+        header('Location: ./');
+    }
+
+    public function actionDel() {
+        if (!empty($_GET['news_id'])) {
+            $news = new NewsModel;
+            $news->news_id = $_GET['news_id'];
+            $news->delete();
+        }
+        header('Location: ./');
+    }
+
+
+
+
 
 }

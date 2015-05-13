@@ -6,8 +6,7 @@
  * Time: 16:07
  */
 
-class View implements Iterator {
-
+class View {
 
     protected $data =[];
 
@@ -24,27 +23,6 @@ class View implements Iterator {
         foreach ($this->data as $key => $value) {
             $$key = $value;
         }
-        include __DIR__ . './../views/' . $template;
-    }
-
-    //Iterator realisation
-    function rewind() {
-        reset($this->data);
-    }
-
-    function valid() {
-        return isset($this->data[key($this->data)]);
-    }
-
-    function current() {
-        return current($this->data);
-    }
-
-    function key() {
-        return key($this->data);
-    }
-
-    function next() {
-        next($this->data);
+        include __DIR__ . '/../views/' . $template;
     }
 }
