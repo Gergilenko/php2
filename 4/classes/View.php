@@ -9,8 +9,6 @@
 class View
     implements Iterator {
 
-    private $position = 0;
-
     public $data =[];
 
     public function __set($key, $value) {
