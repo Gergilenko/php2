@@ -32,26 +32,33 @@ abstract class AbstractModel {
     }
 
     public static function findAll() {
-        $class = get_called_class();
         $db = new Db;
         $sql = 'SELECT * FROM ' . static::$table;
-        $db->setClassName($class);
+        $db->setClassName(get_called_class());
         return $db->query($sql);
     }
 
     public static function findOneByPk($id) {
         $db = new Db;
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' . static::$table . '_id=:id';
-        //return first row
-        return $db->query($sql, [':id' => $id])[0];
+
+        $result = $db->query($sql, [':id' => $id]);
+        if (!empty($result)) {
+            //return first row
+            return $result[0];
+        }
+        return false;
     }
 
-    public function findByColumn($column, $value) {
-        $class = get_called_class();
+    public static function findByColumn($column, $value) {
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' .$column. '=:value';
         $db = new Db;
-        $db->setClassName($class);
-        return $db->query($sql, [':value' => $value]);
+        $db->setClassName(get_called_class());
+        $result = $db->query($sql, [':value' => $value]);
+        if (!empty($result)) {
+            return $result;
+        }
+        return false;
     }
 
     public function save() {
@@ -85,18 +92,18 @@ abstract class AbstractModel {
 
     protected function update() {
         $id = static::$table . '_id';
-        //columns of table
-        $cols = array_keys($this->data);
-        // replace $this->data keys with ':key'
         $data =[];
-        $sets = [];
-        foreach ($cols as $col) {
-            $sets[] = $col . '=:' . $col;
-            $data[':' . $col] = $this->data[$col];
+        $cols = [];
+        foreach ($this->data as $col => $value) {
+            $data[':' . $col] = $value;
+            if ($col == $id) {
+                continue;
+            }
+            $cols[] = $col . '=:' . $col;
         }
         //generating query: UPDATE table SET col1=:col1, col2=:col2 WHERE table_id=:id
         $sql = 'UPDATE ' . static::$table . '
-                SET ' . implode(', ', $sets) . '
+                SET ' . implode(', ', $cols) . '
                 WHERE ' . $id . '=:' . $id;
         $db = new Db;
         $db->exec($sql, $data);
