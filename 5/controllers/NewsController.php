@@ -17,7 +17,7 @@ class NewsController {
 
     public function actionOne() {
         if (empty($_GET['news_id'])) {
-            header("Location: ./");
+            header('Location: ' . SITE_ROOT);
         }
         $view = new View;
         $view->item = NewsModel::findOneByPk($_GET['news_id']);
@@ -37,13 +37,13 @@ class NewsController {
             $news->add_date = date('Y-m-d');
             $news->save();
         }
-        header('Location: ./');
+        header('Location: ' . SITE_ROOT);
     }
 
     public function actionEdit() {
 
         if (empty($_GET['news_id'])) {
-            header("Location: ./");
+            header('Location: ' . SITE_ROOT);
         }
         $view = new View;
         $view->item = NewsModel::findOneByPk($_GET['news_id']);
@@ -62,7 +62,7 @@ class NewsController {
                 $news->save();
             }
         }
-        header('Location: ./');
+        header('Location: ' . SITE_ROOT);
     }
 
     public function actionDel() {
@@ -71,6 +71,6 @@ class NewsController {
             $news->news_id = $_GET['news_id'];
             $news->delete();
         }
-        header('Location: ./');
+        header('Location: ' . SITE_ROOT);
     }
 }

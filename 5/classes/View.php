@@ -8,6 +8,7 @@
 
 class View {
 
+
     protected $data =[];
 
     public function __set($key, $value) {
@@ -24,5 +25,9 @@ class View {
             $$key = $value;
         }
         include __DIR__ . '/../views/' . $template;
+    }
+
+    public function url($str) {
+        echo SITE_ROOT . $str;
     }
 }

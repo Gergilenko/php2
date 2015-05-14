@@ -9,8 +9,6 @@
 /**
  * Class AbstractModel
  *
- * The ID field of tables must be like this: table_id
- * Example: if table name is 'blogs' the name of id column is 'blogs_id'
  *
  */
 
