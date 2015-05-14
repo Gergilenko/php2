@@ -6,6 +6,14 @@
  * Time: 23:45
  */
 
+/**
+ * Class AbstractModel
+ *
+ * The ID field of tables must be like this: table_id
+ * Example: if table name is 'blogs' the name of id column is 'blogs_id'
+ *
+ */
+
 abstract class AbstractModel {
 
     protected static $table;
@@ -17,6 +25,10 @@ abstract class AbstractModel {
 
     public function __get($key) {
         return $this->data[$key];
+    }
+
+    public function __isset($attr) {
+        return isset($this->data[$attr]);
     }
 
     public static function findAll() {
@@ -34,7 +46,25 @@ abstract class AbstractModel {
         return $db->query($sql, [':id' => $id])[0];
     }
 
-    public function insert() {
+    public function findByColumn($column, $value) {
+        $class = get_called_class();
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' .$column. '=:value';
+        $db = new Db;
+        $db->setClassName($class);
+        return $db->query($sql, [':value' => $value]);
+    }
+
+    public function save() {
+        $id = static::$table . '_id';
+        if (!isset($this->$id)) {
+            $this->$id = $this->insert();
+        }
+        else {
+            $this->update();
+        }
+    }
+
+    protected function insert() {
         //columns of table
         $cols = array_keys($this->data);
         // refactor $this->data keys with ':key'
@@ -48,10 +78,12 @@ abstract class AbstractModel {
                  VALUES
                  (' . implode(', ', array_keys($data)) . ')';
         $db = new Db;
-        $db->exec($sql, $data);
+        if ($db->exec($sql, $data)) {
+            return $db->lastInsertId();
+        }
     }
 
-    public function update() {
+    protected function update() {
         $id = static::$table . '_id';
         //columns of table
         $cols = array_keys($this->data);

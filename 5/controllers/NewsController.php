@@ -35,7 +35,7 @@ class NewsController {
             $news->title = substr($_POST['title'], 0, 100);
             $news->text = $_POST['text'];
             $news->add_date = date('Y-m-d');
-            $news->insert();
+            $news->save();
         }
         header('Location: ./');
     }
@@ -59,7 +59,7 @@ class NewsController {
                 $news->title = substr($_POST['title'], 0, 100);
                 $news->text = $_POST['text'];
                 $news->news_id = $_POST['news_id'];
-                $news->update();
+                $news->save();
             }
         }
         header('Location: ./');
@@ -73,9 +73,4 @@ class NewsController {
         }
         header('Location: ./');
     }
-
-
-
-
-
 }
