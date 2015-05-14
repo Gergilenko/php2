@@ -19,5 +19,11 @@ $act = isset($_GET['act']) ? $_GET['act'] : 'All';
 $ctrlClassName = $ctrl . 'Controller';
 $controller = new $ctrlClassName;
 $method = 'action' . $act;
+try {
+    $controller->$method();
+}
+catch (Exception $e) {
 
-$controller->$method();
+    $error = new ErrorController($e);
+    $error->run();
+}

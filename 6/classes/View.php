@@ -19,6 +19,10 @@ class View {
         return $this->data[$key];
     }
 
+    public function __isset($attr) {
+        return isset($this->data[$attr]);
+    }
+
     public function display($template) {
 
         foreach ($this->data as $key => $value) {
