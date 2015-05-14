@@ -8,13 +8,13 @@
 
 /**
  * Class NewsModel
- * @property $news_id
+ * @property $id
  * @property $title
  * @property $text
  * @property $add_date
  */
 class NewsModel extends AbstractModel {
 
-    protected static $table = 'news';
+    protected static $table = 'news5';
 
 }

@@ -38,7 +38,7 @@ abstract class AbstractModel {
 
     public static function findOneByPk($id) {
         $db = new Db;
-        $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' . static::$table . '_id=:id';
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id';
 
         $result = $db->query($sql, [':id' => $id]);
         if (!empty($result)) {
@@ -60,9 +60,8 @@ abstract class AbstractModel {
     }
 
     public function save() {
-        $id = static::$table . '_id';
-        if (!isset($this->$id)) {
-            $this->$id = $this->insert();
+        if (!isset($this->id)) {
+            $this->id = $this->insert();
         }
         else {
             $this->update();
@@ -89,28 +88,26 @@ abstract class AbstractModel {
     }
 
     protected function update() {
-        $id = static::$table . '_id';
         $data =[];
         $cols = [];
         foreach ($this->data as $col => $value) {
             $data[':' . $col] = $value;
-            if ($col == $id) {
+            if ($col == 'id') {
                 continue;
             }
             $cols[] = $col . '=:' . $col;
         }
-        //generating query: UPDATE table SET col1=:col1, col2=:col2 WHERE table_id=:id
+        //generating query: UPDATE table SET col1=:col1, col2=:col2 WHERE id=:id
         $sql = 'UPDATE ' . static::$table . '
                 SET ' . implode(', ', $cols) . '
-                WHERE ' . $id . '=:' . $id;
+                WHERE id=:id';
         $db = new Db;
         $db->exec($sql, $data);
     }
 
     public function delete() {
-        $id = static::$table . '_id';
-        $sql = 'DELETE FROM ' . static::$table . ' WHERE ' . $id . '=:id';
+        $sql = 'DELETE FROM ' . static::$table . ' WHERE id=:id';
         $db = new Db;
-        $db->exec($sql, [':id' => $this->$id]);
+        $db->exec($sql, [':id' => $this->id]);
     }
 }

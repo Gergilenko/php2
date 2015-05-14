@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>NEWS</title>
-    <link type="text/css" rel="stylesheet" href="./views/css/style.css">
+    <link type="text/css" rel="stylesheet" href="<?php $this->url('views/css/style.css'); ?>">
 </head>
 <body>
 <div id="container">
@@ -12,7 +12,7 @@
         <div class='block'>
             <div class='mhead'> <?php echo $item->title; ?> </div>
             <p> <?php echo $item->text; ?> </p>
-            <div class='mfoot'> <?php echo $item->add_date; ?> <a href='./index.php?ctrl=News&act=Del&news_id=<?php echo $item->news_id; ?>'>Удалить</a> <a href='./index.php?ctrl=News&act=Edit&news_id=<?php echo $item->news_id; ?>'>Править</a></div>
+            <div class='mfoot'> <?php echo $item->add_date; ?> <a href='<?php $this->url('News/Del/' . $item->id); ?>'>Удалить</a> <a href='<?php $this->url('News/Edit/' . $item->id); ?>'>Править</a></div>
         </div>
 </div>
 </body>

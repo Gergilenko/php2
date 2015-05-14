@@ -11,7 +11,7 @@
         <form action="<?php $this->url('News/Save'); ?>" method="post">
             <p><input type="text" name="title" value="<?php echo $item->title; ?>" required></p>
             <p><textarea name="text" rows="10" wrap="soft" required><?php echo $item->text; ?></textarea></p>
-            <input type="hidden" name="news_id" value="<?php echo $item->news_id; ?>">
+            <input type="hidden" name="id" value="<?php echo $item->id; ?>">
             <p><input type="date" name="add_date" value="<?php echo $item->add_date; ?>"></p>
             <p><input type="submit" value="Сохранить"></p>
         </form>
