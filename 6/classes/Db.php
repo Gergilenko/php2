@@ -15,6 +15,7 @@ class Db {
 
         $dsn = 'mysql:dbname=' . DB_BASE . ';host=' . DB_HOST;
         $this->dbh = new PDO($dsn, DB_USER, DB_PASSWORD);
+        $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function setClassName($className) {

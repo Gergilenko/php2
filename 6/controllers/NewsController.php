@@ -22,7 +22,7 @@ class NewsController {
         $view = new View;
         $view->item = NewsModel::findOneByPk($_GET['id']);
         if (empty($view->item)) {
-            throw new Exception('Страница не найдена по ID', 404);
+            throw new Exception('ActionOne: Страница не найдена по ID: ' . $_GET['id'], 404);
         }
         $view->display('news/one.php');
     }
@@ -51,7 +51,7 @@ class NewsController {
         $view = new View;
         $view->item = NewsModel::findOneByPk($_GET['id']);
         if (empty($view->item)) {
-            throw new Exception('Страница не найдена по ID', 404);
+            throw new Exception('ActionEdit: Страница не найдена по ID: ' . $_GET['id'], 404);
         }
         $view->display('news/edit.php');
     }

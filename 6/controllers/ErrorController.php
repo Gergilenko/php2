@@ -8,22 +8,28 @@
 
 class ErrorController {
 
-    public $exception;
+    public $e;
 
     public function __construct(Exception $e) {
-        $this->exception = $e;
+        $this->e = $e;
     }
 
     public function run() {
-        $data['code'] = $this->exception->getCode();
-        $data['mes'] = $this->exception->getMessage();
-        $data['file'] = $this->exception->getFile();
+        $data['code'] = $this->e->getCode();
+        $data['message'] = $this->e->getMessage();
+        $data['file'] = $this->e->getFile();
 
         $log = new Log();
         $log->data = $data;
         $log->write();
 
+
+        $template = 'error/' . $data['code'] . '.php';
+        if (!file_exists(__DIR__ . '/../views/' . $template)) {
+            $template = 'error/default.php';
+        }
         $view = new View();
-        $view->display('error/' . $data['code'] . '.php');
+        $view->items = $data;
+        $view->display($template);
     }
 }

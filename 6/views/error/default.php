@@ -1,4 +1,3 @@
-<?php header('HTTP/1.0 404 Not Found'); ?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -8,11 +7,12 @@
 </head>
 <body>
 <div id="container">
-    <h1>Страница не найдена.</h1>
+    <h1>Ошибка.</h1>
     <br>
     <div class='block'>
-        <div class='mhead'>Код ошибки: <b>404</b></div>
-        <p>Вы запросили несуществующую страницу.</p>
+        <div class='mhead'>Код ошибки: <b><?php echo $this->items['code']; ?></b></div>
+        <p><?php echo $this->items['message']; ?></p>
+        <p><?php echo $this->items['file']; ?></p>
     </div>
 </div>
 </body>
