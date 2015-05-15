@@ -6,6 +6,9 @@
  * Time: 1:16
  */
 
-class AdminController {
+namespace App\Controllers;
+
+
+class Admin {
 
 }

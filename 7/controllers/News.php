@@ -5,13 +5,16 @@
  * Date: 11.05.2015
  * Time: 22:55
  */
+namespace App\Controllers;
 
-class NewsController {
+use App\Models\News as Model;
+
+class News {
 
     public function actionAll() {
 
-        $view = new View;
-        $view->items = NewsModel::findAll();
+        $view = new \View;
+        $view->items = Model::findAll();
         $view->display('news/all.php');
     }
 
@@ -19,22 +22,22 @@ class NewsController {
         if (empty($_GET['id'])) {
             header('Location: ' . SITE_ROOT);
         }
-        $view = new View;
-        $view->item = NewsModel::findOneByPk($_GET['id']);
+        $view = new \View;
+        $view->item = Model::findOneByPk($_GET['id']);
         if (empty($view->item)) {
-            throw new Exception('ActionOne: Страница не найдена по ID: ' . $_GET['id'], 404);
+            throw new \Exception('ActionOne: Страница не найдена по ID: ' . $_GET['id'], 404);
         }
         $view->display('news/one.php');
     }
 
     public function actionNew() {
-        $view = new View;
+        $view = new \View;
         $view->display('news/new.php');
     }
 
     public function actionAdd() {
         if (!empty($_POST['title']) && !empty($_POST['text'])) {
-            $news = new NewsModel;
+            $news = new Model;
             $news->title = substr($_POST['title'], 0, 100);
             $news->text = $_POST['text'];
             $news->add_date = date('Y-m-d');
@@ -48,10 +51,10 @@ class NewsController {
         if (empty($_GET['id'])) {
             header('Location: ' . SITE_ROOT);
         }
-        $view = new View;
-        $view->item = NewsModel::findOneByPk($_GET['id']);
+        $view = new \View;
+        $view->item = Model::findOneByPk($_GET['id']);
         if (empty($view->item)) {
-            throw new Exception('ActionEdit: Страница не найдена по ID: ' . $_GET['id'], 404);
+            throw new \Exception('ActionEdit: Страница не найдена по ID: ' . $_GET['id'], 404);
         }
         $view->display('news/edit.php');
     }
@@ -60,7 +63,7 @@ class NewsController {
 
         if (!empty($_POST['id']) && isset($_POST['add_date'])) {
             if (isset($_POST['title']) && isset($_POST['text'])) {
-                $news = new NewsModel;
+                $news = new Model;
                 $news->add_date = $_POST['add_date'];
                 $news->title = substr($_POST['title'], 0, 100);
                 $news->text = $_POST['text'];
@@ -73,7 +76,7 @@ class NewsController {
 
     public function actionDel() {
         if (!empty($_GET['id'])) {
-            $news = new NewsModel;
+            $news = new Model;
             $news->id = $_GET['id'];
             $news->delete();
         }

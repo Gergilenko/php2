@@ -6,6 +6,8 @@
  * Time: 22:46
  */
 
+use App\Controllers\Error;
+
 //Front Controller
 error_reporting(E_ALL);
 
@@ -25,6 +27,6 @@ try {
 }
 catch (Exception $e) {
 
-    $error = new ErrorController($e);
+    $error = new Error($e);
     $error->process();
 }

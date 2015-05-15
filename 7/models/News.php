@@ -6,6 +6,8 @@
  * Time: 18:40
  */
 
+namespace App\Models;
+
 /**
  * Class NewsModel
  * @property $id
@@ -13,7 +15,7 @@
  * @property $text
  * @property $add_date
  */
-class NewsModel extends AbstractModel {
+class News extends \AbstractModel {
 
     protected static $table = 'news5';
 
