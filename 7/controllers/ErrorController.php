@@ -14,7 +14,7 @@ class ErrorController {
         $this->e = $e;
     }
 
-    public function run() {
+    public function process() {
         $data['code'] = $this->e->getCode();
         $data['message'] = $this->e->getMessage();
         $data['file'] = $this->e->getFile();

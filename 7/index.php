@@ -12,9 +12,9 @@ error_reporting(E_ALL);
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/autoload.php';
 
+$ctrl = isset($_GET['ctrl']) ? ucfirst($_GET['ctrl']) : 'News';
+$act = isset($_GET['act']) ? ucfirst($_GET['act']) : 'All';
 
-$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
-$act = isset($_GET['act']) ? $_GET['act'] : 'All';
 
 $ctrlClassName = $ctrl . 'Controller';
 $method = 'action' . $act;
@@ -26,5 +26,5 @@ try {
 catch (Exception $e) {
 
     $error = new ErrorController($e);
-    $error->run();
+    $error->process();
 }

@@ -8,7 +8,7 @@
 <body>
     <div id="container">
         <h1>NEWS</h1>
-        <form action="<?php $this->url('News/Save'); ?>" method="post">
+        <form action="<?php $this->url('news/save'); ?>" method="post">
             <p><input type="text" name="title" value="<?php echo $item->title; ?>" required></p>
             <p><textarea name="text" rows="10" wrap="soft" required><?php echo $item->text; ?></textarea></p>
             <input type="hidden" name="id" value="<?php echo $item->id; ?>">

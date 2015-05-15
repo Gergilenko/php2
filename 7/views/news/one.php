@@ -12,7 +12,7 @@
         <div class='block'>
             <div class='mhead'> <?php echo $item->title; ?> </div>
             <p> <?php echo $item->text; ?> </p>
-            <div class='mfoot'> <?php echo $item->add_date; ?> <a href='<?php $this->url('News/Del/' . $item->id); ?>'>Удалить</a> <a href='<?php $this->url('News/Edit/' . $item->id); ?>'>Править</a></div>
+            <div class='mfoot'> <?php echo $item->add_date; ?> <a href='<?php $this->url('news/del/' . $item->id); ?>'>Удалить</a> <a href='<?php $this->url('news/edit/' . $item->id); ?>'>Править</a></div>
         </div>
 </div>
 </body>
