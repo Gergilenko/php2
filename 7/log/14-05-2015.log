@@ -1,0 +1,5 @@
+14-05-2015 23:43:54	 Error: 404
+14-05-2015 23:43:54	 Error: 404
+14-05-2015 23:44:20	 Error: 404
+14-05-2015 23:52:35	 Error: 404 | 0 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+14-05-2015 23:56:13	 Caught Exception: 404 | 0 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php

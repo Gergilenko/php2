@@ -1,0 +1,35 @@
+15-05-2015 00:00:55	 Caught Exception: 404 | 0 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:01:24	 Caught Exception: 404 | 0 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:11:28	 Caught Exception: 404 | Страница не найдена | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:15:21	 Caught Exception: 404 | Страница не найдена | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:16:17	 Caught Exception: 404 | Страница не найдена | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:16:23	 Caught Exception: 404 | Страница не найдена | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:27:04	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:57:26	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:57:41	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 00:58:19	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:09:28	 Caught Exception: 404 | Страница не найдена по ID:1 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:16:00	 Caught Exception: 1049 | SQLSTATE[HY000] [1049] Unknown database '1shp' | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:26:46	 Caught Exception: 1049 | SQLSTATE[HY000] [1049] Unknown database '1shp' | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:28:55	 Caught Exception: 1049 | SQLSTATE[HY000] [1049] Unknown database '1shp' | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:31:21	 Caught Exception: 1049 | SQLSTATE[HY000] [1049] Unknown database '1shp' | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:31:53	 Caught Exception: 1049 | SQLSTATE[HY000] [1049] Unknown database '1shp' | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:31:59	 Caught Exception: 1049 | SQLSTATE[HY000] [1049] Unknown database '1shp' | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:32:15	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:35:34	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:36:38	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:37:37	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:38:01	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:38:16	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:38:58	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:39:11	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:39:28	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:40:38	 Caught Exception: 404 | Страница не найдена по ID | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:44:01	 Caught Exception: 404 | Страница не найдена по ID: 1 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:46:21	 Caught Exception: 404 | ActionEdit: Страница не найдена по ID: 1 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:46:25	 Caught Exception: 404 | ActionEdit: Страница не найдена по ID: 2 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:46:35	 Caught Exception: 404 | ActionOne: Страница не найдена по ID: 1 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
+15-05-2015 01:47:00	 Caught Exception: 2002 | SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:47:53	 Caught Exception: 2002 | SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:48:16	 Caught Exception: 2002 | SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  | D:\OpenServer\domains\php2.local\6\classes\Db.php
+15-05-2015 01:48:26	 Caught Exception: 404 | ActionOne: Страница не найдена по ID: 1 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
