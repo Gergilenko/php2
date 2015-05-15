@@ -42,6 +42,9 @@ class News {
             $news->text = $_POST['text'];
             $news->add_date = date('Y-m-d');
             $news->save();
+
+            $mail = new \PHPMailer();
+            $mail->send();
         }
         header('Location: ' . SITE_ROOT);
     }

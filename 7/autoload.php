@@ -6,7 +6,7 @@
  * Time: 22:53
  */
 
-function __autoload($class) {
+function my_autoload($class) {
 
     if (file_exists(__DIR__ . '/classes/' . $class . '.php')) {
         require __DIR__ . '/classes/' . $class . '.php';
@@ -20,6 +20,8 @@ function __autoload($class) {
             require $path;
         }
     }
-
-
 }
+
+spl_autoload_register('my_autoload');
+
+require __DIR__ . '/vendor/autoload.php';
