@@ -85,6 +85,7 @@ abstract class AbstractModel {
         if ($db->exec($sql, $data)) {
             return $db->lastInsertId();
         }
+        return false;
     }
 
     protected function update() {

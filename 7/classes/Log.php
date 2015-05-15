@@ -25,10 +25,7 @@ class Log {
         if (file_exists($this->filename)) {
             return file($this->filename, FILE_SKIP_EMPTY_LINES);
         }
-        else {
-            echo 'file not exist: ' . $this->filename;
-        }
-
+        return false;
     }
 
 }
