@@ -24,7 +24,7 @@ class Error {
         $log->data = $data;
         $log->write();
 
-
+        /*
         $template = 'error/' . $data['code'] . '.php';
         if (!file_exists(__DIR__ . '/../views/' . $template)) {
             $template = 'error/default.php';
@@ -32,5 +32,11 @@ class Error {
         $view = new \View();
         $view->items = $data;
         $view->display($template);
+
+        */
+        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../views');
+        $twig = new \Twig_Environment($loader);
+        echo $twig->render('error/index.html', $data);
+
     }
 }

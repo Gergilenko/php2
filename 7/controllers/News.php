@@ -58,7 +58,6 @@ class News {
             $mail->SetFrom('wmz795@yandex.ru', 'HugoBoss'); //от кого (желательно указывать свой реальный e-mail на используемом SMTP сервере
             $mail->Subject = htmlspecialchars('Новость добавлена!');
             $mail->MsgHTML('На сайте NEWS вставлена новая новость: <a href="http://php2.local/7/news/one/' .$news->id . '">' . $news->title . "</a>");
-            //$mail->addAttachment();
             $mail->Send();
 
         }

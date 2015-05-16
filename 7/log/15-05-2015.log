@@ -34,3 +34,4 @@
 15-05-2015 01:48:16	 Caught Exception: 2002 | SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  | D:\OpenServer\domains\php2.local\6\classes\Db.php
 15-05-2015 01:48:26	 Caught Exception: 404 | ActionOne: Страница не найдена по ID: 1 | D:\OpenServer\domains\php2.local\6\controllers\NewsController.php
 15-05-2015 22:25:42	 Caught Exception: 404 | ActionOne: Страница не найдена по ID: 21 | D:\OpenServer\domains\php2.local\7\controllers\News.php
+15-05-2015 23:42:28	 Caught Exception: 404 | ActionOne: Страница не найдена по ID: 21 | D:\OpenServer\domains\php2.local\7\controllers\News.php
