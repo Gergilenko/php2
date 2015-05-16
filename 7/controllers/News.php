@@ -46,18 +46,19 @@ class News {
             $news->save();
 
             $mail = new \PHPMailer();
-            $mail->IsSMTP();
-            $mail->SMTPAuth   = true;
-            $mail->SMTPSecure = 'ssl';
-            $mail->SMTPAutoTLS = false;
-            $mail->Host       = 'smtp.yandex.ru';
-            $mail->Port       = '465';
-            $mail->Username   = 'wmz795@yandex.ru';
-            $mail->Password   = 'M%g7KtGy';
+            $mail->isSendmail();
+            //$mail->IsSMTP();
+            //$mail->SMTPAuth   = true;
+            //$mail->SMTPSecure = 'ssl';
+            //$mail->SMTPAutoTLS = false;
+            //$mail->Host       = 'smtp.yandex.ru';
+            //$mail->Port       = '465';
+            //$mail->Username   = 'wmz795@yandex.ru';
+            //$mail->Password   = 'M%g7KtGy';
             $mail->CharSet  = 'utf-8';
+            $mail->SetFrom('wmz795@yandex.ru', 'HugoBoss');
             $mail->AddReplyTo('wmz795@yandex.ru', 'HugoBoss');
-            $mail->AddAddress('gergilenko@gmail.com');                //кому письмо
-            $mail->SetFrom('wmz795@yandex.ru', 'HugoBoss'); //от кого (желательно указывать свой реальный e-mail на используемом SMTP сервере
+            $mail->AddAddress('gergilenko@gmail.com');    // recipient
             $mail->Subject = htmlspecialchars('Новость добавлена!');
             $mail->MsgHTML('На сайте NEWS вставлена новая новость: <a href="http://php2.local/7/news/one/' .$news->id . '">' . $news->title . "</a>");
             $mail->Send();
