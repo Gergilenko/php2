@@ -5,15 +5,17 @@
  * Date: 11.05.2015
  * Time: 22:55
  */
+
 namespace App\Controllers;
 
 use App\Models\News as Model;
+use App\Classes\View;
 
 class News {
 
     public function actionAll() {
 
-        $view = new \View;
+        $view = new View();
         $view->items = Model::findAll();
         $view->display('news/all.php');
     }
@@ -22,7 +24,7 @@ class News {
         if (empty($_GET['id'])) {
             header('Location: ' . SITE_ROOT);
         }
-        $view = new \View;
+        $view = new View;
         $view->item = Model::findOneByPk($_GET['id']);
         if (empty($view->item)) {
             throw new \Exception('ActionOne: Страница не найдена по ID: ' . $_GET['id'], 404);
@@ -31,7 +33,7 @@ class News {
     }
 
     public function actionNew() {
-        $view = new \View;
+        $view = new View;
         $view->display('news/new.php');
     }
 
@@ -69,7 +71,7 @@ class News {
         if (empty($_GET['id'])) {
             header('Location: ' . SITE_ROOT);
         }
-        $view = new \View;
+        $view = new View;
         $view->item = Model::findOneByPk($_GET['id']);
         if (empty($view->item)) {
             throw new \Exception('ActionEdit: Страница не найдена по ID: ' . $_GET['id'], 404);

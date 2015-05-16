@@ -6,6 +6,8 @@
  * Time: 21:32
  */
 
+namespace App\Classes;
+
 class Log {
 
     public $data = [];

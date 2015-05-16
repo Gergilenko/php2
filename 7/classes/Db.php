@@ -6,6 +6,8 @@
  * Time: 22:48
  */
 
+namespace App\Classes;
+
 class Db {
 
     private $dbh;
@@ -14,8 +16,8 @@ class Db {
     public function __construct() {
 
         $dsn = 'mysql:dbname=' . DB_BASE . ';host=' . DB_HOST;
-        $this->dbh = new PDO($dsn, DB_USER, DB_PASSWORD);
-        $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->dbh = new \PDO($dsn, DB_USER, DB_PASSWORD);
+        $this->dbh->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
     public function setClassName($className) {
@@ -26,7 +28,7 @@ class Db {
 
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
-        return $sth->fetchAll(PDO::FETCH_CLASS, $this->className);
+        return $sth->fetchAll(\PDO::FETCH_CLASS, $this->className);
     }
 
     public function exec($sql, $params = []) {

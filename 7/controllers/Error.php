@@ -5,7 +5,9 @@
  * Date: 15.05.2015
  * Time: 0:19
  */
+
 namespace App\Controllers;
+use App\Classes\Log;
 
 class Error {
 
@@ -20,7 +22,7 @@ class Error {
         $data['message'] = $this->e->getMessage();
         $data['file'] = $this->e->getFile();
 
-        $log = new \Log();
+        $log = new Log();
         $log->data = $data;
         $log->write();
 

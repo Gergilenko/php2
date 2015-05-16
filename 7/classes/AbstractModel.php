@@ -6,6 +6,8 @@
  * Time: 23:45
  */
 
+namespace App\Classes;
+
 /**
  * Class AbstractModel
  *

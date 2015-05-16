@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-    {% block head %}
-    <link rel="stylesheet" href="style.css" />
-    <title>{% block title %}{% endblock %}</title>
-    {% endblock %}
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>NEWS</title>
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div id="content">{% block content %}
-
-
-    <p>{{ code }}</p>
-    <p>{{ message }}</p>
-
-
-
-    {% endblock %}</div>
-<div id="footer">
-    {% block footer %}
-    &copy; Copyright 2011 by <a href="#">you</a>.
-    {% endblock %}
+<div id="container">
+    <h1>Ошибка</h1>
+    <br>
+    <div class='block'>
+        <div class='mhead'>Код ошибки: <b>{{ code }}</b></div>
+        <p><?php echo $this->{{ message }}</p>
+        <p><?php echo $this->{{ file }}</p>
+    </div>
 </div>
 </body>
 </html>

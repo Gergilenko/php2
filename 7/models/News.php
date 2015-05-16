@@ -7,6 +7,7 @@
  */
 
 namespace App\Models;
+use App\Classes\AbstractModel;
 
 /**
  * Class NewsModel
@@ -15,7 +16,7 @@ namespace App\Models;
  * @property $text
  * @property $add_date
  */
-class News extends \AbstractModel {
+class News extends AbstractModel {
 
     protected static $table = 'news5';
 
