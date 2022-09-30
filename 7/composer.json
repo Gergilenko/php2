@@ -12,6 +12,6 @@
   "require": {
     "phpmailer/phpmailer": "v6.1.6",
     "avvertix/phptimer": "v0.1.0",
-    "twig/twig": "1.6.5"
+    "twig/twig": "1.44.7"
   }
 }
